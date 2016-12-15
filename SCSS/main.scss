@@ -1,0 +1,314 @@
+
+
+/* ############ MIXINS  ############## */
+
+
+// animation mixin
+@mixin rotateAnimation($time) {
+  -webkit-animation: Rotate $time linear infinite;
+  -moz-animation: Rotate $time linear infinite;
+  animation: Rotate $time linear infinite;
+  @-webkit-keyframes Rotate {
+    0% {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes Rotate {
+    0% {-moz-transform: rotate(0deg);}
+    100% {-moz-transform: rotate(360deg);}
+  }
+  @keyframes Rotate {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+}
+
+// shows element animation
+@mixin showElement($time,$start,$back-color) {
+  -webkit-animation: Show $time ease-in-out $start;
+  -moz-animation: Show $time ease-in-out $start;
+  animation: Show $time ease-in-out $start;
+  @-webkit-keyframes Show {
+    0% {opacity:0;background:$back-color}
+    100% {opacity:1;background:transparent}
+  }
+  @-moz-keyframes Show {
+    0% {opacity:0;background:$back-color}
+    100% {opacity:1;background:transparent}
+  }
+  @keyframes Show {
+    0% {opacity:0;background:$back-color}
+    100% {opacity:1;background:transparent}
+  }
+}
+/* ############ END/MIXINS  ############## */
+
+/* ############ COLORS ############## */
+$black-pearl: #051D29;
+$spray: #93EDF5;
+$picton-blue: #4BA0E3;
+$iceberg: #d9f2f4;
+$curious-blueRGBA: rgba(16, 81, 139, 0.78);
+$aquabackRGBA: rgba(0, 255, 255, 0.05);
+$aquaRGBA: rgba(0, 255, 255, 0.83);
+/* ############ END/COLORS ############## */
+
+/* ############ TYPOGRAPHY ############## */
+//  GOOGLE FONTS
+//  font-family: 'Raleway', sans-serif;
+//  font-family: 'Megrim', cursive;
+
+h1 {
+  font-family: 'Megrim', cursive;
+  font-weight: bold;
+  font-size: 30px;
+  padding-top: 15px;
+  color:$spray;
+}
+
+h2 {
+  font-family: 'Source Code Pro', monospace;
+  color: $iceberg;
+}
+
+a{
+  color: $iceberg;
+  text-decoration: none;
+  outline: none;
+  &:hover,&:focus,&:active{
+    outline:none;
+  }
+  .link{
+    color: $iceberg;
+    text-decoration: none;
+    outline: none;
+    // square brackets
+    &.brackets{
+      &::before{
+        content:'[';
+      }
+      &::after{
+        content:']';
+      }
+    }
+  }
+}
+/* ############ END/TYPOGRAPHY ############## */
+
+/* ############ BUTTONS ############## */
+
+.btn {
+  color: $iceberg;
+  background: transparent;
+  padding: 10px;
+  margin: 10px;
+  border: none;
+  outline: none;
+
+  &:focus,
+  &:hover {
+    color: black;
+    background: $spray;
+    outline: none;
+  }
+
+  &:active {
+    color: lighten($iceberg, 15%);
+    outline: none;
+  }
+}
+
+/* ############ END/BUTTONS ############## */
+
+/* ############ BASE ############## */
+body {
+  font-family: 'Source Code Pro', monospace;
+  overflow-x: hidden;
+  color: $spray;
+  text-shadow: 0 0 5px $aquaRGBA;
+  background: $black-pearl;
+}
+
+.container {
+  position: relative;
+  margin: 0 auto;
+  min-width: 320px;
+  min-height: 480px;
+
+  header {
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+    position: relative;
+    padding-top: 40px;
+    bottom: 10px;
+  }
+}
+
+
+
+/* ############ END/BASE ############## */
+
+/* ############ ELEMENTS ############## */
+.row {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  margin: -284px auto 0 auto;
+  background:$aquabackRGBA;
+  // borders
+  border-radius: 100%;
+  border-top: 4px double transparent;
+  border-bottom: 4px double transparent;
+  border-left: 4px double $picton-blue;
+  border-right: 4px double $picton-blue;
+
+  .search-tool {
+    position: relative;
+    margin-top: 100px;
+    padding: 0 12px;
+
+
+    &.search-done {
+      margin-top: 30px;
+      padding: 0 20px;
+      transition: margin 0.6s ease-in-out 0.5s,padding 0.6s ease-in-out 0.5s;
+    }
+    .buttons {
+      position: relative;
+      text-align: center;
+      margin-top: 20px;
+    }
+  }
+  &.searchList{
+    -webkit-transition: margin 0.6s;
+    transition: margin 0.6s;
+    padding: 0 5px 0 5px;
+    margin-top: -300px;
+    border-radius: 0;
+    width: 300px;
+    height: 100%;
+  }
+
+}
+
+input[type=text] {
+  font-size: 16px;
+  font-family: 'Source Code Pro', monospace;
+  text-shadow: 0 0 5px $aquaRGBA;
+  padding: 14px 25px 12px 10px;
+  color: $spray;
+  border-top: 2px solid $picton-blue;
+  border-bottom: 2px solid $picton-blue;
+  border-left: none;
+  border-right: none;
+  background: transparent;
+  outline-style: none;
+}
+
+.circle {
+  width: 280px;
+  height: 280px;
+  margin: 20px auto 0 auto;
+  position: relative;
+  //borders
+  border-radius: 100%;
+  border-top: 10px dashed $picton-blue;
+  border-bottom: 10px dashed $picton-blue;
+  border-left: 10px solid $picton-blue;
+  border-right: 10px dashed $picton-blue;
+  -webkit-transition: opacity 0.4s ;
+  transition:  opacity 0.4s;
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url('/wikipedia-viewer-app/images/circle.png') center center;
+    opacity: 0.08;
+    @include rotateAnimation(35s);
+  }
+  // animation
+  @include rotateAnimation(40s);
+}
+
+.hide{
+  opacity: 0;
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  -webkit-transition: opacity 0.4s ;
+  transition:  opacity 0.4s;
+}
+
+#clear {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  padding: 5px;
+}
+
+#code-output{
+  margin-top: 15px;
+
+  li{
+    @for $i from 1 through 10{
+        &:nth-child(#{$i}){
+          @include showElement(0.2s* $i,0s ,$iceberg);
+        }
+      }
+  }
+
+
+  .list-item{
+    border-left: 2px solid $iceberg;
+    padding: 10px 0 10px 4px ;
+    margin-top: 15px;
+    cursor: pointer;
+    background: lighten($black-pearl,1%);
+    &:hover{
+      background: $iceberg;
+      color: black;
+      h2{
+        color: black;
+      }
+    }
+    p{
+      margin-top: 10px;
+      font-size: 12px;
+    }
+  }
+
+  .page{
+    text-align: center;
+
+    h2{
+      text-align: center;
+      margin: 40px 0 0 0;
+    }
+    img{
+      margin: 20px 0;
+      width: 50%;
+    }
+    .no-img{
+      text-align: center;
+      margin: 50px 0;
+    }
+    p{
+      text-align: left;
+      margin:10px  0 ;
+      b{
+        font-weight: bold;
+      }
+      &:last-child{
+        margin: 20px;
+        text-align: center;
+      }
+    }
+  @include showElement(0.6s,0s ,$iceberg);
+  }
+}

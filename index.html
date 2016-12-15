@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wikipedia viewer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Megrim%7CSource+Code+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" integrity="sha384-Wrgq82RsEean5tP3NK3zWAemiNEXofJsTwTyHmNb/iL3dP/sZJ4+7sOld1uqYJtE" crossorigin="anonymous">
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Wikipedia Viewer App</h1>
+        </header>
+        <main>
+            <div id="ring1" class="circle "></div>
+            <div id="content" class="row">
+                <div id="search-box" class="search-tool">
+                    <input type="text" name="search" id="word" class="search">
+                    <a href="#" id="clear" class="btn"><i class="fa fa-times fa-lg" aria-hidden="true"></i></a>
+                    <div class="buttons">
+                        <a href="#" id="button"><span class="btn"><i class="fa fa-search fa-lg" aria-hidden="true"></i></span></a>
+                        <a href="#" id="random"><span class="btn"><i class="fa fa-random fa-lg" aria-hidden="true"></i></span></a>
+                    </div>
+                </div>
+                <ul id="code-output">
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <p class="page-author">Code and design <br/><a href="http://markostefanovic.github.io/" class="link brackets" target="_blank">Marko Stefanovic</a> for FCC ©2016</p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script src="scripts/main.js"></script>
+
+</body>
+
+</html>
